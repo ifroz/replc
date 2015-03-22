@@ -6,9 +6,7 @@ var repl = require('repl'),
 var pkg = require(process.cwd() + '/package.json');
 
 var defaultConfig = {
-  context: {
-    log: console.log
-  },
+  context: { log: console.log },
   logger: console.log,
   path: process.cwd(),
   useDependencies: true,
@@ -33,7 +31,7 @@ function replc(inputConfig) {
 
   getPrinter(config)(getWelcomeMessage(context));
 
-  config.replOptions.eval = replEval;
+  config.replOptions.eval = replEvalFactory(config);
   var replServer = repl.start(config.replOptions);
   return _.assign(replServer.context, context);
 }
@@ -42,20 +40,23 @@ function configWithDefaults(yourConfig) {
   return _.assign({}, yourConfig, pkg.repl, defaultConfig);
 }
 
-function replEval(cmd, ctx, filename, cb) {
-  try {
-    var result = vm.runInContext(cmd, ctx);
-    ctx._0 = result;
-    console.log(colors.green(cmd));
-    cb(null, result);
-  } catch (e) {
-    console.log([
-      colors.red(e),
-      colors.grey(e.stack),
-      colors.blue(':(')
-    ].join('\n'));
-    cb(null);
-  }
+function replEvalFactory(cfg) {
+  return function replEval(cmd, ctx, filename, cb) {
+    try {
+      var result = vm.runInContext(cmd, ctx);
+      ctx._0 = result;
+      getPrinter(cfg, 'green')('Successfully ran ' + cmd);
+      getPrinter(cfg, 'grey')(result);
+    } catch (e) {
+      cfg.logger([
+        colors.red(e),
+        colors.grey(e.stack),
+        colors.blue(':(')
+      ].join('\n'));
+    } finally {
+      cb(null);
+    }
+  };
 }
 
 function renderContext(cfg) {
@@ -74,12 +75,21 @@ function renderContext(cfg) {
 
 function tryToRequireAll(packages, aliases, useKeys) {
   useKeys = useKeys !== undefined ? useKeys : _.isObject(useKeys);
-  return _.reduce(packages, function requirePackage(modules, value, key) {
-    var moduleName = useKeys ? key : value;
+  var packageNames = useKeys ? _.keys(packages) : packages;
+  var formattedPackages = _.reduce(packageNames, function(formatted, pkgName) {
+    formatted[aliases[pkgName]||pkgName] = pkgName;
+    return formatted;
+  }, {});
+  console.log(formattedPackages);
+  //return _.mapValues(formattedPackages, function(v){})
+  return _.reduce(packages, function tryRequirePackage(modules, value, key) {
     try {
+      var moduleName = useKeys ? key : value;
       modules[aliases[moduleName] || moduleName] = require(moduleName);
-    } catch(e) {}
-    return modules;
+    } catch(e) {
+    } finally {
+      return modules;
+    }
   }, {});
 }
 
