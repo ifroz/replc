@@ -34,13 +34,24 @@ var defaultConfig = {
   logger: console.log,
   path: process.cwd(),
   useDependencies: true,
-  useDevDependencies: pkg.name === 'replc',
+  useDevDependencies: false,
   useColors: true,
   silent: false,
-  dependencies: ['fs', 'lodash', 'moment', 'string', 'co'],
-  aliases: { lodash: '__', underscore: '__', string: 'S' },
-  // _ has special value in the node repl.
-  replOptions: { prompt: pkg.name + '#> ' },
+  dependencies: [
+    'fs', 
+    'lodash', 
+    'moment', 
+    'string', 
+    'co'
+  ],
+  aliases: { 
+    lodash: '__', 
+    underscore: '__',
+    string: 'S' 
+  },
+  replOptions: { 
+    prompt: pkg.name + '#> ' 
+  },
   debugMode: pkg.name === 'replc'
 };
 ```
