@@ -1,6 +1,6 @@
 {
   "name": "replc",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Package sensitive node REPL, something, which aims to be similar to the `rails c` for node.",
   "main": "replc.js",
   "scripts": {
