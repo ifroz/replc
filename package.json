@@ -1,0 +1,15 @@
+{
+  "name": "repl",
+  "version": "1.0.0",
+  "description": "Package sensitive node REPL, something, which aims to be similar to the `rails console` for node.",
+  "main": "repl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ifroz <ifrozen@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "lodash": "^3.5.0"
+  }
+}
