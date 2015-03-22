@@ -8,6 +8,8 @@ var defaultConfig = {
   context: { /* custom variables direcly available to the repl */ },
   useDependencies: true,
   useDevDependencies: false,
+  useColors: true,
+  silent: false,
   dependencies: ['lodash', 'moment', 'string', 'co'],
   aliases: {
     lodash: '_',
@@ -17,19 +19,8 @@ var defaultConfig = {
   replOptions: {
     prompt: pkg.name + '#> '
   },
-  silent: false,
   debugMode: pkg.name === 'repl'
 };
-
-function tryToRequireAll(packages, aliases, useKeys) {
-  return _.reduce(packages, function requirePackages(modules, value, key) {
-    var moduleName = useKeys ? key : value;
-    try {
-      modules[aliases[moduleName] || moduleName] = require(moduleName);
-    } catch(e) {}
-    return modules;
-  }, {});
-}
 
 function renderContext(cfg) {
   var ctx = tryToRequireAll(cfg.dependencies, cfg.aliases);
@@ -46,6 +37,16 @@ function renderContext(cfg) {
   return ctx;
 }
 
+function tryToRequireAll(packages, aliases, useKeys) {
+  return _.reduce(packages, function requirePackages(modules, value, key) {
+    var moduleName = useKeys ? key : value;
+    try {
+      modules[aliases[moduleName] || moduleName] = require(moduleName);
+    } catch(e) {}
+    return modules;
+  }, {});
+}
+
 function getWelcomeString(ctx) {
   return [
     'Package: ' + pkg.name,
@@ -55,13 +56,13 @@ function getWelcomeString(ctx) {
   ].join('\n');
 }
 
-module.exports.exampleConfig = defaultConfig;
 module.exports = function replicator(inputConfig) {
   var cfg = _.defaults(inputConfig || {}, pkg.repl, defaultConfig);
   var ctx = renderContext(cfg);
 
   if (!_.isEmpty(ctx) && ! cfg.silent) {
-    console.log(colors.blue(getWelcomeString(ctx)));
+    var print = cfg.useColors ? _.flow(colors.blue, print) : console.log;
+    print(getWelcomeString(ctx));
   }
 
   var replServer = repl.start(cfg.replOptions);
