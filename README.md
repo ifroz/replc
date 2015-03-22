@@ -16,6 +16,23 @@ replc({
 });
 ```
 
+### Example usage in gulp
+
+Note that a `setTimeout` or similar call is highly adviced to keep stdout clean.
+
+```
+gulp.task('replc', function() {
+  setTimeout(function() {
+    replc({
+      context: {
+        useDevDependencies: true,
+        expect: require('chai').expect
+      }
+    })
+  });
+});
+```
+
 ### Config parameters
 - `context`: any objects in here will be accessible in your REPL.
 - `aliases`: require dependencies to a different name, e.g.: `{lodash: '__'}` Note that `_` contains the result of the last expression.
@@ -55,3 +72,4 @@ var defaultConfig = {
   debugMode: pkg.name === 'replc'
 };
 ```
+

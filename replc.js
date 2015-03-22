@@ -29,7 +29,7 @@ function replc(inputConfig) {
   var config = configWithDefaults(inputConfig);
   var context = renderContext(config);
 
-  getPrinter(config)(getWelcomeMessage(context));
+  getLogger(config)(getWelcomeMessage(context));
 
   config.replOptions.eval = replEvalFactory(config);
   var replServer = repl.start(config.replOptions);
@@ -45,8 +45,8 @@ function replEvalFactory(cfg) {
     try {
       var result = vm.runInContext(cmd, ctx);
       ctx._0 = result;
-      getPrinter(cfg, 'green')('Successfully ran ' + cmd);
-      getPrinter(cfg, 'grey')(result);
+      getLogger(cfg, 'green')('Successfully ran ' + cmd);
+      getLogger(cfg, 'grey')(result);
     } catch (e) {
       cfg.logger([
         colors.red(e),
@@ -80,7 +80,6 @@ function tryToRequireAll(packages, aliases, useKeys) {
     formatted[aliases[pkgName]||pkgName] = pkgName;
     return formatted;
   }, {});
-  console.log(formattedPackages);
   //return _.mapValues(formattedPackages, function(v){})
   return _.reduce(packages, function tryRequirePackage(modules, value, key) {
     try {
@@ -93,7 +92,7 @@ function tryToRequireAll(packages, aliases, useKeys) {
   }, {});
 }
 
-function getPrinter(cfg, color) {
+function getLogger(cfg, color) {
   if (cfg.silent) return _.noop;
   return cfg.useColors ? _.flow(colors[color || 'blue'], cfg.logger) : cfg.logger;
 }

@@ -12,5 +12,10 @@
   "dependencies": {
     "colors": "^1.0.3",
     "lodash": "^3.5.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "expect": "^1.6.0",
+    "gulp": "^3.8.11"
   }
 }
