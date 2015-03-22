@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a572862c-4d3b-46f8-b904-ebea3e3713de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pkg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/configWithDefaults.js" afterPath="$PROJECT_DIR$/lib/configWithDefaults.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/printWelcomeMessage.js" afterPath="$PROJECT_DIR$/lib/printWelcomeMessage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/replEvalFactory.js" afterPath="$PROJECT_DIR$/lib/replEvalFactory.js" />
     </list>
     <ignored path="repl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +32,8 @@
       <file leaf-file-name="replc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/replc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -62,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startRepl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="startRepl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/startRepl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7274827" vertical-offset="0" max-vertical-offset="433">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
               <folding />
             </state>
@@ -92,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="replEvalFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="replEvalFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/replEvalFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="660">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.41108546" vertical-offset="227" max-vertical-offset="705">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -151,15 +148,15 @@
         <option value="$PROJECT_DIR$/eval.js" />
         <option value="$PROJECT_DIR$/welcomeMessage.js" />
         <option value="$PROJECT_DIR$/startRepl.js" />
-        <option value="$PROJECT_DIR$/lib/replEvalFactory.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/lib/renderContext.js" />
         <option value="$PROJECT_DIR$/lib/configWithDefaults.js" />
         <option value="$PROJECT_DIR$/lib/pkg.js" />
         <option value="$PROJECT_DIR$/lib/printWelcomeMessage.js" />
-        <option value="$PROJECT_DIR$/replc.js" />
         <option value="$PROJECT_DIR$/lib/startRepl.js" />
+        <option value="$PROJECT_DIR$/replc.js" />
+        <option value="$PROJECT_DIR$/lib/replEvalFactory.js" />
       </list>
     </option>
   </component>
@@ -374,7 +371,19 @@
       <option name="project" value="LOCAL" />
       <updated>1427063142289</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix(duplicate) require package.json in one exact place.">
+      <created>1427063176272</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1427063176272</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor(evalAndLogIfValid)">
+      <created>1427063550377</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1427063550377</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -430,7 +439,9 @@
     <MESSAGE value="refactor(separate-files) decomposition complete." />
     <MESSAGE value="fix(cfg.ctx) context name has a conflict, renamed config paramter to ctx" />
     <MESSAGE value="fix(startRepl) it should return a REPLServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(startRepl) it should return a REPLServer" />
+    <MESSAGE value="fix(duplicate) require package.json in one exact place." />
+    <MESSAGE value="refactor(evalAndLogIfValid)" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(evalAndLogIfValid)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -689,14 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/replEvalFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="660">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1666665" vertical-offset="2" max-vertical-offset="435">
@@ -713,26 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pkg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="433">
-          <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/renderContext.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/configWithDefaults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -745,18 +732,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/replc.js">
+    <entry file="file://$PROJECT_DIR$/lib/pkg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="433">
+          <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/startRepl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7274827" vertical-offset="0" max-vertical-offset="433">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
           <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/configWithDefaults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/replc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/replEvalFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41108546" vertical-offset="227" max-vertical-offset="705">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
