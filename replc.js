@@ -70,13 +70,9 @@ function logSuccess(cfg, cmd, result, cb) {
 function logCaughtEvalError(cfg, cmd, e) {
   var red = cfg.useColors ? colors.red : _.identity;
   var grey = cfg.useColors ? colors.grey : _.identity;
-  if (e.name === 'ReferenceError') {
-    cfg.logger(red('ReferenceError:', cmd.trim('\n'), 'is not defined.'));
-  } else {
-    cfg.logger(red('Failed to evalutate:', cmd));
-    cfg.logger(red(e.name + ':', e.message));
-    cfg.logger(grey(e.stack));
-  }
+  cfg.logger(red('Failed to evalutate:', cmd.trim('\n')));
+  cfg.logger(red(e.name + ':', e.message));
+  cfg.logger(grey(e.stack));
 }
 
 function renderContext(cfg) {
