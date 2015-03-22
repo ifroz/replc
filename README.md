@@ -1,4 +1,4 @@
-# `replc`
+# `replc` [![npm version](https://badge.fury.io/js/replc.svg)](http://badge.fury.io/js/replc)
 
 `replc` is a colorful cli console for iojs. It operates in your current working directory.
 
