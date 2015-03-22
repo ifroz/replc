@@ -4,7 +4,7 @@
   "description": "Package sensitive node REPL, something, which aims to be similar to the `rails c` for node.",
   "main": "repl.js",
   "scripts": {
-    "start": "node ./run.js",
+    "start": "node ./replc.js --replc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ifroz <ifrozen@gmail.com>",
