@@ -1,6 +1,6 @@
 # `replc`
 
-`replc` aims to be something like the `rails console`, for iojs. It operates in your current working directory.
+`replc` is a colorful cli console for iojs. It operates in your current working directory.
 
 ## Usage in code
 

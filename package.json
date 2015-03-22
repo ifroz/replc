@@ -1,7 +1,7 @@
 {
   "name": "replc",
   "version": "1.2.3",
-  "description": "Package sensitive node REPL, something, which aims to be similar to the `rails c` for node.",
+  "description": "`replc` is a colorful cli console for iojs. It operates in your current working directory.",
   "main": "replc.js",
   "scripts": {
     "start": "node ./replc.js --replc",
