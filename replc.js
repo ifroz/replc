@@ -2,8 +2,8 @@
 var _ = require('lodash');
 var configWithDefaults = require('./lib/configWithDefaults'),
     renderContext = require('./lib/renderContext'),
-    startRepl = require('./lib/startRepl'),
-    printWelcomeMessage = require('./lib/printWelcomeMessage');
+    printWelcomeMessage = require('./lib/printWelcomeMessage'),
+    startRepl = require('./lib/startRepl');
 
 function replc(inputConfig) {
   var cfg = configWithDefaults(inputConfig);
