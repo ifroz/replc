@@ -1,6 +1,5 @@
 'use strict';
 var _ = require('lodash');
-
 var configWithDefaults = require('./lib/configWithDefaults'),
     renderContext = require('./lib/renderContext'),
     startRepl = require('./lib/startRepl'),
@@ -13,5 +12,9 @@ function replc(inputConfig) {
   return startRepl(cfg, ctx);
 }
 
-if (_.contains(process.argv, '--replc')) repl();
+if (_.contains(process.argv, '--replc')) {
+  repl({ ctx: {
+    json: JSON.parse
+  } });
+}
 module.exports = replc;
