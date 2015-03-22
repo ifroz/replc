@@ -61,13 +61,13 @@ function parseEvalInput(cfg, sourceCode) {
 function logSuccess(cfg, cmd, result) {
   var green = cfg.useColors ? colors.green : _.identity;
   var highlighted = cfg.useColors ? highlight : _.identity;
-  cfg.logger(green('Successfully evaluated:'), cmd.trim('\n'));
+  cfg.logger(green('Success:'), cmd.trim('\n'));
   cfg.logger(green('Result:\n'), highlighted(result.toString()));
 }
 function logCaughtEvalError(cfg, cmd, e) {
-  var red = cfg.useColors ? colors.red : _.identity;
-  var grey = cfg.useColors ? colors.grey : _.identity;
-  cfg.logger(red('Failed to evalutate:', cmd.trim('\n')));
+  var red = cfg.useColors ? colors.red : _.identity,
+      grey = cfg.useColors ? colors.grey : _.identity;
+  cfg.logger(red('Fail: ' + cmd.trim('\n')));
   cfg.logger(red(e.name + ':', e.message));
   cfg.logger(grey(e.stack));
 }
