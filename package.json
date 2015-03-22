@@ -1,7 +1,7 @@
 {
-  "name": "repl",
+  "name": "replc",
   "version": "1.0.0",
-  "description": "Package sensitive node REPL, something, which aims to be similar to the `rails console` for node.",
+  "description": "Package sensitive node REPL, something, which aims to be similar to the `rails c` for node.",
   "main": "repl.js",
   "scripts": {
     "start": "node ./run.js",
