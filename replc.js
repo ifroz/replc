@@ -42,10 +42,10 @@ if (_.contains(process.argv, '--replc')) replc();
 function renderContext(cfg) {
   var ctx = tryToRequireAll(cfg.dependencies, cfg.aliases);
   if (cfg.useDependencies) {
-    _.assign(ctx, tryToRequireAll(pkg.dependencies, cfg.aliases, true));
+    _.assign(ctx, tryToRequireAll(pkg.dependencies, cfg.aliases));
   }
   if (cfg.useDevDependencies) {
-    _.assign(ctx, tryToRequireAll(pkg.devDependencies, cfg.aliases, true));
+    _.assign(ctx, tryToRequireAll(pkg.devDependencies, cfg.aliases));
   }
   if (cfg.debugMode) {
     ctx._cfg = cfg;
@@ -55,6 +55,7 @@ function renderContext(cfg) {
 }
 
 function tryToRequireAll(packages, aliases, useKeys) {
+  useKeys = useKeys !== undefined ? useKeys : _.isObject(useKeys);
   return _.reduce(packages, function requirePackages(modules, value, key) {
 
     var moduleName = useKeys ? key : value;
