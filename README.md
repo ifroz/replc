@@ -20,7 +20,7 @@ replc({
 
 Note that a `setTimeout` or similar call is highly adviced to keep stdout clean.
 
-```
+```javascript
 gulp.task('replc', function() {
   setTimeout(function() {
     replc({

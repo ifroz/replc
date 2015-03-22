@@ -37,7 +37,7 @@ function replc(inputConfig) {
 }
 
 function configWithDefaults(yourConfig) {
-  return _.assign({}, yourConfig, pkg.repl, defaultConfig);
+  return _.assign({}, defaultConfig, pkg.repl, yourConfig);
 }
 
 function replEvalFactory(cfg) {
