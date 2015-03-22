@@ -13,8 +13,6 @@ function replc(inputConfig) {
 }
 
 if (_.contains(process.argv, '--replc')) {
-  repl({ ctx: {
-    json: JSON.parse
-  } });
+  repl({ ctx: { json: JSON.parse } });
 }
 module.exports = replc;
