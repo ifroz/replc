@@ -90,7 +90,7 @@ function tryToRequireAll(packages, aliases, useKeys) {
 function getFormattedPackages(packageNames, aliases) {
   return _.reduce(packageNames, function formatPkg(formatted, pkgName) {
     var key = aliases[pkgName] || pkgName;
-    formatted[humps.camelize(key) || key] = pkgName;
+    formatted[aliases[pkgName] || humps.camelize(key)] = pkgName;
     return formatted;
   }, {});
 }
