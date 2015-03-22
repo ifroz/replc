@@ -18,11 +18,7 @@ var defaultConfig = {
   silent: false,
   preprocessor: _.identity,
   dependencies: ['fs', 'lodash', 'moment', 'string', 'co'],
-  aliases: {
-    lodash: '__',
-    underscore: '__',
-    string: 'S'
-  }, // _ has special value in repl
+  aliases: { lodash: '__',  underscore: '__', string: 'S' }, // _ has special value in repl
   replOptions: {},
   debugMode: pkg.name === 'replc',
   debug: _.flow(colors.red, _.partial(console.log, 'DEBUG: '))
@@ -93,7 +89,8 @@ function tryToRequireAll(packages, aliases, useKeys) {
 }
 function getFormattedPackages(packageNames, aliases) {
   return _.reduce(packageNames, function formatPkg(formatted, pkgName) {
-    formatted[humps.camelize(aliases[pkgName]||pkgName)] = pkgName;
+    var key = aliases[pkgName] || pkgName;
+    formatted[humps.camelize(key) || key] = pkgName;
     return formatted;
   }, {});
 }
