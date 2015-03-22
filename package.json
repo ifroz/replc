@@ -1,8 +1,8 @@
 {
   "name": "replc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package sensitive node REPL, something, which aims to be similar to the `rails c` for node.",
-  "main": "repl.js",
+  "main": "replc.js",
   "scripts": {
     "start": "node ./replc.js --replc",
     "test": "echo \"Error: no test specified\" && exit 1"
