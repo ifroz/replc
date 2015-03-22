@@ -10,21 +10,7 @@ var pkg = require(process.cwd() + '/package.json');
 var replEvalFactory = require('./eval');
 var renderContext = require('./context');
 
-var defaultConfig = {
-  context: { log: console.log },
-  logger: console.log,
-  path: process.cwd(),
-  useDependencies: true,
-  useDevDependencies: pkg.name === 'replc',
-  useColors: true,
-  silent: false,
-  preprocessor: _.identity,
-  dependencies: ['fs', 'lodash', 'moment', 'string', 'co'],
-  aliases: { lodash: '__',  underscore: '__', string: 'S' }, // _ has special value in repl
-  replOptions: {},
-  debugMode: pkg.name === 'replc',
-  debug: _.flow(colors.red, _.partial(console.log, 'DEBUG: '))
-};
+var defaultConfig = require('./defaultConfig');
 
 function replc(inputConfig) {
   var config = configWithDefaults(inputConfig);
