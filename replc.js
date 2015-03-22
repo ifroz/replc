@@ -33,7 +33,8 @@ function renderContext(cfg) {
   if (cfg.debugMode) {
     ctx._cfg = cfg;
   }
-  return _.assign(ctx, cfg.context);
+  _.assign(ctx, cfg.context)
+  return ctx;
 }
 
 function tryToRequireAll(packages, aliases, useKeys) {
