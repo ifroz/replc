@@ -12,6 +12,7 @@
   "dependencies": {
     "ansi-highlight": "^1.0.2",
     "colors": "^1.0.3",
+    "humps": "^0.4.2",
     "lodash": "^3.5.0"
   },
   "devDependencies": {

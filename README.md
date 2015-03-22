@@ -35,6 +35,7 @@ gulp.task('replc', function() {
 
 ### Config parameters
 - `context`: any objects in here will be accessible in your REPL.
+- `preprocessor`: Transform the line before sending it to the vm. The place for coffeescript, babel, etc. Defaults to `_.identity`.
 - `aliases`: require dependencies to a different name, e.g.: `{lodash: '__'}` Note that `_` contains the result of the last expression.
 - `dependencies`: an optional array of package names, if you don't want to `useDependencies`.
 - `useDependencies`: all `package.json` dependencies will be available, `true` by default

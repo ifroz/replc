@@ -3,6 +3,7 @@ var repl = require('repl'),
     vm = require('vm'),
     _ = require('lodash'),
     co = require('co'),
+    humps = require('humps'),
     colors = require('colors'),
     highlight = require('ansi-highlight');
 var pkg = require(process.cwd() + '/package.json');
@@ -61,7 +62,7 @@ function parseEvalInput(cfg, sourceCode) {
   return cfg.preprocessor ? cfg.preprocessor(sourceCode) : sourceCode;
 }
 
-function logSuccess(cfg, cmd, result, cb) {
+function logSuccess(cfg, cmd, result) {
   var green = cfg.useColors ? colors.green : _.identity;
   var highlighted = cfg.useColors ? highlight : _.identity;
   cfg.logger(green('Successfully evaluated:'), cmd.trim('\n'));
@@ -92,7 +93,7 @@ function tryToRequireAll(packages, aliases, useKeys) {
 }
 function getFormattedPackages(packageNames, aliases) {
   return _.reduce(packageNames, function formatPkg(formatted, pkgName) {
-    formatted[aliases[pkgName]||pkgName] = pkgName;
+    formatted[humps.camelize(aliases[pkgName]||pkgName)] = pkgName;
     return formatted;
   }, {});
 }
