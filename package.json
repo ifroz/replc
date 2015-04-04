@@ -17,9 +17,6 @@
   "dependencies": {
     "ansi-highlight": "^1.0.2",
     "async": "^0.9.0",
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
-    "browserify-string": "^1.1.0",
     "colors": "^1.0.3",
     "gulp-watch": "^4.2.1",
     "humps": "^0.4.2",
