@@ -10,19 +10,17 @@ return _.flow(parseArgs, logIfDebugMode, mapArgs, replc)();
 
 function parseArgs() {
   return require('yargs').
-      usage('Usage: jsh [--help -ha0dD ' +
-        '-r <require-package> ' +
-        '-x <exclude-package>]').
-      describe('all',
-        'Require all dependencies ' +
+      usage('Usage: jsh --help -ha0dD -r <pkg> -x <pkg> <file-name(s)>').
+      describe('all', 'Require all dependencies ' +
         '(for the project in your current working directory).').
-        alias('all', 'a').
+      alias('all', 'a').
       describe('0', 'Don\'t require anything unless stated explicitly with -r.').
       describe('require <package>',
         'Require package into context with camel came name').
         alias('r', 'require').
-        alias('i', 'ignore').
-      describe('exclude <package>', 'Exclude package').
+        alias('i', 'require').
+        alias('ignore', 'require').
+      describe('exclude', 'Exclude package').
         alias('x', 'exclude').
       describe('use-dependencies', 'require package.json dependencies').
         alias('use-dependencies', 'd').
@@ -66,7 +64,7 @@ function mapArgs(argv) {
 }
 
 function tapIf(filterExpr, task) {
-  return function runTaskIfFilterExprMatches(tapped) {
+;  return function runTaskIfFilterExprMatches(tapped) {
     if (_.filter(tapped, filterExpr).length) task(tapped);
     return tapped;
   };
