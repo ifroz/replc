@@ -60,8 +60,7 @@ function mapArgs(argv) {
 }
 
 function ensureArray(val) {
-  //return _.isArray(val) ? val : [val];
-  return val;
+  return _.isArray(val) ? val : [val];
 }
 
 function tapIf(filterExpr, task) {
