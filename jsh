@@ -9,11 +9,14 @@ return _.flow(parseArgs, logIfDebugMode, mapArgs, replc)();
 
 function parseArgs() {
   return require('yargs').
-      usage('Usage: jsh -a0 -r lodash -x ').
-      describe('all', 'Require all dependencies (in your project root).').
+      usage('Usage: jsh -a0dD [-r <require-package>]... [-x <exclude-package>]...').
+      describe('all',
+        'Require all dependencies ' +
+        '(for the project in your current working directory).').
         alias('all', 'a').
-      describe('0', 'Dont require anything unless stated explicitly by -r.').
-      describe('require <package>', 'Require package into context with camel came name').
+      describe('0', 'Don\'t require anything unless stated explicitly with -r.').
+      describe('require <package>',
+        'Require package into context with camel came name').
         alias('r', 'require').
       describe('exclude <package>', 'Ignore package').
         alias('x', 'exclude').
@@ -21,8 +24,8 @@ function parseArgs() {
         alias('use-dependencies', 'd').
       describe('use-dev-dependencies', 'require devDependencies').
         alias('use-dev-dependencies', 'D').
-      describe('last-result', "-l remap node repl's context._; '$_' by default.").
-        alias('last-result', '-l').
+      describe('last-result', "remap node repl's context._; '$_' by default.").
+        alias('last-result', 'l').
       describe('no-color', 'Disable colors').
         alias('no-color', 'C').
       describe('debug-mode', 'Debug verbosity.').

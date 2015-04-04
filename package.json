@@ -3,6 +3,9 @@
   "version": "1.3.0",
   "description": "`replc` is a colorful cli console for  iojs. It operates in your current working directory.",
   "main": "replc.js",
+  "bin": {
+    "jsh": "./jsh"
+  },
   "preferGlobal": "true",
   "scripts": {
     "babel": "babel-node ./replc.js --replc",

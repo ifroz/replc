@@ -1,6 +1,13 @@
 # `replc` [![npm version](https://badge.fury.io/js/replc.svg)](http://badge.fury.io/js/replc)
 
-`replc` is a colorful cli console for iojs. It operates in your current working directory.
+`replc` is a colorful cli console for iojs. It prefers to be installed globally and operates in your current working directory.
+
+## Usage
+
+```
+$ npm install replc -g
+$ jsh --help
+```
 
 ## Usage in code
 
@@ -45,7 +52,7 @@ gulp.task('replc', function() {
 - `useColors`: `true` by default
 - `silent`: suppress welcome message, false by default
 
-An example config would look like this:
+#### Config example
 ```javascript
 var defaultConfig = {
   context: {log: console.log},
