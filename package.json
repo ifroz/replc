@@ -1,11 +1,12 @@
 {
   "name": "replc",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "`replc` is a colorful cli console for  iojs. It operates in your current working directory.",
   "main": "replc.js",
+  "preferGlobal": "true",
   "scripts": {
     "babel": "babel-node ./replc.js --replc",
-    "start": "node ./replc.js --replc",
+    "start": "./jsh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ifroz <ifrozen@gmail.com>",
