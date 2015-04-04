@@ -18,7 +18,8 @@ function parseArgs() {
       describe('require <package>',
         'Require package into context with camel came name').
         alias('r', 'require').
-      describe('exclude <package>', 'Ignore package').
+        alias('i', 'ignore').
+      describe('exclude <package>', 'Exclude package').
         alias('x', 'exclude').
       describe('use-dependencies', 'require package.json dependencies').
         alias('use-dependencies', 'd').

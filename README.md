@@ -7,8 +7,24 @@
 ```
 $ npm install replc -g
 $ jsh --help
-```
+Usage: jsh -a0dD [-r <require-package>]... [-x <exclude-package>]...
 
+Options:
+  -0                          Dont require anything unless stated explicitly
+                              with -r.
+  --all, -a                   Require all dependencies (for the project in your
+                              current working directory).
+  --require <package>         Require package into context with camel came name
+
+  --exclude <package>         Ignore package
+  --use-dependencies, -d      require package.json dependencies
+  --use-dev-dependencies, -D  require devDependencies
+  --last-result, -l           remap node repl's context._; '$_' by default.
+  --no-color, -C              Disable colors
+  --debug-mode                Debug verbosity.
+  --soft-tabs                 Pretty print soft tabs, defaults to 2
+  --help, -h                  Show help
+```
 ## Usage in code
 
 ```javascript
