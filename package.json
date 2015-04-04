@@ -19,7 +19,8 @@
     "colors": "^1.0.3",
     "gulp-watch": "^4.2.1",
     "humps": "^0.4.2",
-    "lodash": "^3.5.0"
+    "lodash": "^3.5.0",
+    "yargs": "^3.6.0"
   },
   "devDependencies": {
     "chai": "^2.2.0",
