@@ -41,8 +41,6 @@ function mapArgs(argv) {
       dependencies: ensureArray(argv.require),
       exclude: ensureArray(argv.exclude)
     }).defaults({
-      useDependencies: true,
-      useDevDependencies: true,
       useColors: true,
       softTabs: 2
     }).value();
@@ -60,7 +58,7 @@ function mapArgs(argv) {
 }
 
 function ensureArray(val) {
-  return _.isArray(val) ? val : [val];
+  return val ? _.isArray(val) ? val : [val] : null;
 }
 
 function tapIf(filterExpr, task) {

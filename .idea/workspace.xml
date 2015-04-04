@@ -55,7 +55,7 @@
           <file leaf-file-name="replEvalFactory.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/eval/replEvalFactory.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="855">
+                <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="855">
                   <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
                   <folding />
                 </state>
@@ -65,8 +65,8 @@
           <file leaf-file-name="jsh" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/jsh">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7924901" vertical-offset="649" max-vertical-offset="1155">
-                  <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.6961326" vertical-offset="537" max-vertical-offset="1125">
+                  <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -86,11 +86,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="600">
-                  <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+                <state vertical-scroll-proportion="0.14450867" vertical-offset="0" max-vertical-offset="615">
+                  <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -156,10 +156,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="lodashedEval.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="lodashedEval.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/eval/lodashedEval.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.2450593" vertical-offset="0" max-vertical-offset="1095">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
                   <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
                   <folding />
                 </state>
@@ -209,7 +209,6 @@
         <option value="$PROJECT_DIR$/lib/defaultContext.js" />
         <option value="$PROJECT_DIR$/lib/eval/index.js" />
         <option value="$PROJECT_DIR$/lib/eval/replEvalFactory.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/util.js" />
         <option value="$PROJECT_DIR$/jsh.js" />
         <option value="$PROJECT_DIR$/lib/eval/lodashedEval.js" />
@@ -217,6 +216,7 @@
         <option value="$PROJECT_DIR$/lib/configWithDefaults.js" />
         <option value="$PROJECT_DIR$/lib/pkg.js" />
         <option value="$PROJECT_DIR$/lib/renderContext.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/jsh" />
       </list>
     </option>
@@ -455,7 +455,19 @@
       <option name="project" value="LOCAL" />
       <updated>1428157761721</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat(jsh): kinda works :)">
+      <created>1428158090412</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1428158090412</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat(jsh): version 1.3.0 just arrived.">
+      <created>1428158232010</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1428158232010</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -484,7 +496,7 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40865386" sideWeight="0.5010571" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35817307" sideWeight="0.4989429" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31370193" sideWeight="0.4989429" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -562,7 +574,8 @@
     <MESSAGE value="fix(pkg):pkg is now optional" />
     <MESSAGE value="feat(welcome): dont print context row when its empty" />
     <MESSAGE value="feat(jsh): kinda works :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(jsh): kinda works :)" />
+    <MESSAGE value="feat(jsh): version 1.3.0 just arrived." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(jsh): version 1.3.0 just arrived." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -957,18 +970,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/lib/eval/lodashedEval.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="600">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/eval/lodashedEval.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2450593" vertical-offset="0" max-vertical-offset="1095">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.14450867" vertical-offset="0" max-vertical-offset="615">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -983,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7924901" vertical-offset="649" max-vertical-offset="1155">
-          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.6961326" vertical-offset="537" max-vertical-offset="1125">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
           <folding />
         </state>
       </provider>
