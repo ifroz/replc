@@ -64,7 +64,7 @@ function mapArgs(argv) {
 }
 
 function tapIf(filterExpr, task) {
-;  return function runTaskIfFilterExprMatches(tapped) {
+  return function runTaskIfFilterExprMatches(tapped) {
     if (_.filter(tapped, filterExpr).length) task(tapped);
     return tapped;
   };
