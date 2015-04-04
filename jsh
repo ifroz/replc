@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 var _ = require('lodash');
-var replc = require('./replc');
+var replc = require('./replc'),
+    util = require('./lib/util');
 var logIfDebugMode = tapIf(function(obj) {
   return obj.debugMode;
 }, console.log);
@@ -9,7 +10,9 @@ return _.flow(parseArgs, logIfDebugMode, mapArgs, replc)();
 
 function parseArgs() {
   return require('yargs').
-      usage('Usage: jsh -a0dD [-r <require-package>]... [-x <exclude-package>]...').
+      usage('Usage: jsh [--help -ha0dD ' +
+        '-r <require-package> ' +
+        '-x <exclude-package>]').
       describe('all',
         'Require all dependencies ' +
         '(for the project in your current working directory).').
@@ -42,8 +45,9 @@ function mapArgs(argv) {
       'debugMode',
       'softTabs'
     ).assign(requireAllOrNone(), verbosity(), {
-      dependencies: ensureArray(argv.require),
-      exclude: ensureArray(argv.exclude)
+      files: argv._,
+      dependencies: util.ensureArray(argv.require),
+      exclude: util.ensureArray(argv.exclude)
     }).defaults({
       useColors: true,
       softTabs: 2
@@ -59,10 +63,6 @@ function mapArgs(argv) {
       silent: !!argv.silent
     };
   }
-}
-
-function ensureArray(val) {
-  return val ? _.isArray(val) ? val : [val] : null;
 }
 
 function tapIf(filterExpr, task) {

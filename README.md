@@ -7,7 +7,7 @@
 ```
 $ npm install replc -g
 $ jsh --help
-Usage: jsh -a0dD [-r <require-package>]... [-x <exclude-package>]...
+Usage: jsh [--help -ha0dD -r <require-package> -x <exclude-package> fileName fileName
 
 Options:
   -0                          Dont require anything unless stated explicitly
